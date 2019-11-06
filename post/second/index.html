@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="James">
+  <meta name="description" content="Coding Every Day">
+  <meta name="keywords" content="C&#43;&#43;,Qt">
+  
+  <link rel="prev" href="https://newJames.github.io/post/first/" />
+  <link rel="next" href="https://newJames.github.io/post/third/" />
+  <link rel="canonical" href="https://newJames.github.io/post/second/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           多个Lib静态库合并为一个的方法 | James Blog
+       
+  </title>
+  <meta name="title" content="多个Lib静态库合并为一个的方法 | James Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/newJames.github.io\/"
+    },
+    "articleSection" : "post",
+    "name" : "多个Lib静态库合并为一个的方法",
+    "headline" : "多个Lib静态库合并为一个的方法",
+    "description" : " #多个Lib静态库合并为一个的方法\n问题 当项目的依赖库较多时，我们在自我编译添加链接和项目发布时都十分的麻烦，想到之前Opencv的Lib库只有一个Opencv_world.lib，遂想到能否将多个Lib合并起来。网上还是有大量的回答的，现假装搬运复述一遍。\n假设现在有01.lib,02.lib,03.lib三个lib库，需要合并成combine.lib\n解决方法  首先需要vsIDE,一般windows下写c\x2b\x2b应该都会装吧，在vs安装路径中 你的安装路径\\VC\\bin\\lib.exe，双击lib.exe，若缺少运行环境，把对应的动态链接库拷贝到文件夹下即可。\n 将需要合并的01.lib,02.lib,03.lib复制到上述工作目录中。\n 之后打开CMD控制台cd进入lib.exe工作目录下,在命令行中输入`lib.exe \/output: combine.lib 01.lib 02.lib 03.lib`,\n 运行后如果库之间的某些函数是相同的（不是重载），lib,exe会报warning,这个不用担心，我再合并opencv的库时候刷了满屏。\n  ",
+    "inLanguage" : "en-us",
+    "author" : "James",
+    "creator" : "James",
+    "publisher": "James",
+    "accountablePerson" : "James",
+    "copyrightHolder" : "James",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-10-26 13:30:01 \x2b0800 CST",
+    "dateModified" : "2019-10-26 13:30:01 \x2b0800 CST",
+    "url" : "https:\/\/newJames.github.io\/post\/second\/",
+    "wordCount" : "15",
+    "keywords" : [ "编译","C\x2b\x2b", "James Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">多个Lib静态库合并为一个的方法</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://newJames.github.io/" rel="author">James</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-10-26 itemprop="datePublished">October 26, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://newJames.github.io/categories/%E7%BC%96%E8%AF%91/"> 编译 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>#多个Lib静态库合并为一个的方法</p>
+
+<h2 id="问题">问题</h2>
+
+<p>当项目的依赖库较多时，我们在自我编译添加链接和项目发布时都十分的麻烦，想到之前Opencv的Lib库只有一个Opencv_world.lib，遂想到能否将多个Lib合并起来。网上还是有大量的回答的，现假装搬运复述一遍。<br />
+假设现在有01.lib,02.lib,03.lib三个lib库，需要合并成combine.lib</p>
+
+<h2 id="解决方法">解决方法</h2>
+
+<ul>
+<li><p>首先需要vsIDE,一般windows下写c++应该都会装吧，在vs安装路径中
+<code>你的安装路径\VC\bin\lib.exe</code>，双击lib.exe，若缺少运行环境，把对应的动态链接库拷贝到文件夹下即可。</p></li>
+
+<li><p>将需要合并的01.lib,02.lib,03.lib复制到上述工作目录中。</p></li>
+
+<li><p>之后打开CMD控制台cd进入lib.exe工作目录下,在命令行中输入`lib.exe /output: combine.lib 01.lib 02.lib 03.lib`,</p></li>
+
+<li><p>运行后如果库之间的某些函数是相同的（不是重载），lib,exe会报warning,这个不用担心，我再合并opencv的库时候刷了满屏。</p></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>James </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://newJames.github.io/post/second/>https://newJames.github.io/post/second/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/%E7%BC%96%E8%AF%91/">
+                    #编译</a></span>
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/c&#43;&#43;/">
+                    #C&#43;&#43;</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://newJames.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://newJames.github.io/post/first/" class="prev" rel="prev" title="Git Clone下载主题失败及解决"><i class="iconfont icon-left"></i>&nbsp;Git Clone下载主题失败及解决</a>
+         
+        
+        <a href="https://newJames.github.io/post/third/" class="next" rel="next" title="Qt项目打包发布">Qt项目打包发布&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://newJames.github.io/">James</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

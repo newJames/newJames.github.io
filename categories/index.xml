@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on James Blog</title>
+    <link>https://newJames.github.io/categories/</link>
+    <description>Recent content in Categories on James Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Nov 2019 15:56:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://newJames.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qt</title>
+      <link>https://newJames.github.io/categories/qt/</link>
+      <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
+      
+      <guid>https://newJames.github.io/categories/qt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QGC源码学习</title>
+      <link>https://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 06 Nov 2019 15:56:14 +0800</pubDate>
+      
+      <guid>https://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编译</title>
+      <link>https://newJames.github.io/categories/%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Sat, 26 Oct 2019 13:30:01 +0800</pubDate>
+      
+      <guid>https://newJames.github.io/categories/%E7%BC%96%E8%AF%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog搭建</title>
+      <link>https://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
+      
+      <guid>https://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

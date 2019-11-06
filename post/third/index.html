@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="James">
+  <meta name="description" content="Coding Every Day">
+  <meta name="keywords" content="C&#43;&#43;,Qt">
+  
+  <link rel="prev" href="https://newJames.github.io/post/second/" />
+  <link rel="next" href="https://newJames.github.io/post/fourth/" />
+  <link rel="canonical" href="https://newJames.github.io/post/third/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Qt项目打包发布 | James Blog
+       
+  </title>
+  <meta name="title" content="Qt项目打包发布 | James Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/newJames.github.io\/"
+    },
+    "articleSection" : "post",
+    "name" : "Qt项目打包发布",
+    "headline" : "Qt项目打包发布",
+    "description" : "Qt项目打包发布 Qt项目打包一般分为以下流程： - 添加qt依赖库 - 添加外部依赖库 通过Qt自带的工具进行Qt项目的发布还是比较简单的，以下发布流程操作与win10环境，linux系统下区别不大\n首先在Qt中构建编译Release项目，将编译生成好的release文件中的.exe文件单独复制到一单独文件夹中。\n使用Qt自带的Qt*-bit for Desktop(#)命令行,其中 * 为Qt版本号，#为编译时所对应的编译器，然后cd到.exe文件夹中，如果是Widget Application(不使用Qquick)项目，\n执行windeployqt %.exe命令，%为项目名称，如果是Quick Application 执行 windeployqt %.exe --qmldir \x26quot;qml路径\x26quot;，qml路径为Qt安装路径\\版本号\\编译器\\qml\n接下来命令行就会在目录下添加Qt对应的依赖lib文件，若项目有依赖外部其他第三方库，将第三方库的静态链接库添加至文件夹中即可。",
+    "inLanguage" : "en-us",
+    "author" : "James",
+    "creator" : "James",
+    "publisher": "James",
+    "accountablePerson" : "James",
+    "copyrightHolder" : "James",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-04 17:00:05 \x2b0800 CST",
+    "dateModified" : "2019-11-04 17:00:05 \x2b0800 CST",
+    "url" : "https:\/\/newJames.github.io\/post\/third\/",
+    "wordCount" : "23",
+    "keywords" : [ "Qt","编译", "James Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Qt项目打包发布</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://newJames.github.io/" rel="author">James</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-04 itemprop="datePublished">November 4, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://newJames.github.io/categories/qt/"> Qt </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="qt项目打包发布">Qt项目打包发布</h1>
+
+<p>Qt项目打包一般分为以下流程：
+- 添加qt依赖库
+- 添加外部依赖库
+通过Qt自带的工具进行Qt项目的发布还是比较简单的，以下发布流程操作与win10环境，linux系统下区别不大</p>
+
+<p>首先在Qt中构建编译Release项目，将编译生成好的release文件中的<strong>.exe文件</strong>单独复制到一单独文件夹中。</p>
+
+<p>使用Qt自带的Qt*-bit for Desktop(#)命令行,其中 * 为Qt版本号，#为编译时所对应的编译器，然后cd到<strong>.exe</strong>文件夹中，如果是Widget Application(不使用Qquick)项目，</p>
+
+<p>执行<code>windeployqt %.exe</code>命令，%为项目名称，如果是Quick Application 执行 <code>windeployqt %.exe --qmldir &quot;qml路径&quot;</code>，qml路径为<strong>Qt安装路径\版本号\编译器\qml</strong></p>
+
+<p>接下来命令行就会在目录下添加Qt对应的依赖lib文件，若项目有依赖外部其他第三方库，将第三方库的静态链接库添加至文件夹中即可。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>James </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://newJames.github.io/post/third/>https://newJames.github.io/post/third/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/qt/">
+                    #Qt</a></span>
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/%E7%BC%96%E8%AF%91/">
+                    #编译</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://newJames.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://newJames.github.io/post/second/" class="prev" rel="prev" title="多个Lib静态库合并为一个的方法"><i class="iconfont icon-left"></i>&nbsp;多个Lib静态库合并为一个的方法</a>
+         
+        
+        <a href="https://newJames.github.io/post/fourth/" class="next" rel="next" title="QGC源码学习(1)-main函数学习">QGC源码学习(1)-main函数学习&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://newJames.github.io/">James</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

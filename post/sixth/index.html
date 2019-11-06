@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="James">
+  <meta name="description" content="Coding Every Day">
+  <meta name="keywords" content="C&#43;&#43;,Qt">
+  
+  <link rel="prev" href="https://newJames.github.io/post/fifth/" />
+  <link rel="next" href="https://newJames.github.io/post/seventh/" />
+  <link rel="canonical" href="https://newJames.github.io/post/sixth/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           QGC源码学习（3）关键数据传输 | James Blog
+       
+  </title>
+  <meta name="title" content="QGC源码学习（3）关键数据传输 | James Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/newJames.github.io\/"
+    },
+    "articleSection" : "post",
+    "name" : "QGC源码学习（3）关键数据传输",
+    "headline" : "QGC源码学习（3）关键数据传输",
+    "description" : "QGC源码学习（3）关键数据传输 在无人系统上位机显示中，最为关键的数据为IMU上传的Roll,Pitch,Yaw和高度（深度）以及方位，在QGC中，由MAVLinkProtocol::messageReceived\n接收到Mavlink数据后，通过信号槽：\nVehicle.cc connect(_mavlink, \x26amp;MAVLinkProtocol::messageReceived, this, \x26amp;Vehicle::_mavlinkMessageReceived); void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t message) { ... ... ... _uas-\x26gt;receiveMessage(message); } UAS.cc void UAS::receiveMessage(mavlink_message_t message) { switch (message.compid) case MAV_...1: case MAV_...2: case MAV_...3: case MAVLINK_MSG_ID_ATTITUDE: { mavlink_attitude_t attitude; mavlink_msg_attitude_decode(\x26amp;message, \x26amp;attitude); quint64 time = getUnixReferenceTime(attitude.time_boot_ms); emit attitudeChanged(this, message.compid, QGC::limitAngleToPMPIf(attitude.roll), QGC::limitAngleToPMPIf(attitude.pitch), QGC::limitAngleToPMPIf(attitude.yaw), time); if (!wrongComponent) { lastAttitude = time; setRoll(QGC::limitAngleToPMPIf(attitude.roll)); setPitch(QGC::limitAngleToPMPIf(attitude.pitch)); setYaw(QGC::limitAngleToPMPIf(attitude.yaw)); attitudeKnown = true; emit attitudeChanged(this, getRoll(), getPitch(), getYaw(), time); } } break; .",
+    "inLanguage" : "en-us",
+    "author" : "James",
+    "creator" : "James",
+    "publisher": "James",
+    "accountablePerson" : "James",
+    "copyrightHolder" : "James",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-06 15:56:14 \x2b0800 CST",
+    "dateModified" : "2019-11-06 15:56:14 \x2b0800 CST",
+    "url" : "https:\/\/newJames.github.io\/post\/sixth\/",
+    "wordCount" : "76",
+    "keywords" : [ "Qt","C\x2b\x2b", "James Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">QGC源码学习（3）关键数据传输</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://newJames.github.io/" rel="author">James</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-06 itemprop="datePublished">November 6, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="qgc源码学习-3-关键数据传输">QGC源码学习（3）关键数据传输</h1>
+
+<p>在无人系统上位机显示中，最为关键的数据为IMU上传的Roll,Pitch,Yaw和高度（深度）以及方位，在QGC中，由<code>MAVLinkProtocol::messageReceived</code></p>
+
+<p>接收到Mavlink数据后，通过信号槽：</p>
+
+<pre><code class="language-python">Vehicle.cc
+connect(_mavlink, &amp;MAVLinkProtocol::messageReceived,     this, &amp;Vehicle::_mavlinkMessageReceived);
+void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t message)
+{
+    ...
+    ...
+    ...
+    _uas-&gt;receiveMessage(message);
+}
+
+UAS.cc
+void UAS::receiveMessage(mavlink_message_t message)
+{
+    switch (message.compid)
+    case MAV_...1:
+    case MAV_...2:
+    case MAV_...3:
+    case MAVLINK_MSG_ID_ATTITUDE:
+        {
+            mavlink_attitude_t attitude;
+            mavlink_msg_attitude_decode(&amp;message, &amp;attitude);
+            quint64 time = getUnixReferenceTime(attitude.time_boot_ms);
+
+            emit attitudeChanged(this, message.compid, QGC::limitAngleToPMPIf(attitude.roll), QGC::limitAngleToPMPIf(attitude.pitch), QGC::limitAngleToPMPIf(attitude.yaw), time);
+
+            if (!wrongComponent)
+            {
+                lastAttitude = time;
+                setRoll(QGC::limitAngleToPMPIf(attitude.roll));
+                setPitch(QGC::limitAngleToPMPIf(attitude.pitch));
+                setYaw(QGC::limitAngleToPMPIf(attitude.yaw));
+
+                attitudeKnown = true;
+                emit attitudeChanged(this, getRoll(), getPitch(), getYaw(), time);
+            }
+        }
+            break;
+    ...
+}
+</code></pre>
+
+<p>在状态机中，receive函数从message中提取出传输的各个数据，并进行数据处理后通过<code>emit valueChanged()</code>，发射信号触发Vehicle中的槽函数对数据进行更新。</p>
+
+<p>在Vehicle中，roll，pitch，yaw均为Fact实例，通过setRawValue()赋值。最后在qml中调用。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>James </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://newJames.github.io/post/sixth/>https://newJames.github.io/post/sixth/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/qt/">
+                    #Qt</a></span>
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/c&#43;&#43;/">
+                    #C&#43;&#43;</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://newJames.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://newJames.github.io/post/fifth/" class="prev" rel="prev" title="QGC源码学习(2)-ToolBox各模块学习"><i class="iconfont icon-left"></i>&nbsp;QGC源码学习(2)-ToolBox各模块学习</a>
+         
+        
+        <a href="https://newJames.github.io/post/seventh/" class="next" rel="next" title="Qt语言家使用">Qt语言家使用&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://newJames.github.io/">James</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

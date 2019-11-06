@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编译 on James Blog</title>
+    <link>https://newJames.github.io/categories/%E7%BC%96%E8%AF%91/</link>
+    <description>Recent content in 编译 on James Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 13:30:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://newJames.github.io/categories/%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>多个Lib静态库合并为一个的方法</title>
+      <link>https://newJames.github.io/post/second/</link>
+      <pubDate>Sat, 26 Oct 2019 13:30:01 +0800</pubDate>
+      
+      <guid>https://newJames.github.io/post/second/</guid>
+      <description> #多个Lib静态库合并为一个的方法
+问题 当项目的依赖库较多时，我们在自我编译添加链接和项目发布时都十分的麻烦，想到之前Opencv的Lib库只有一个Opencv_world.lib，遂想到能否将多个Lib合并起来。网上还是有大量的回答的，现假装搬运复述一遍。
+假设现在有01.lib,02.lib,03.lib三个lib库，需要合并成combine.lib
+解决方法  首先需要vsIDE,一般windows下写c++应该都会装吧，在vs安装路径中 你的安装路径\VC\bin\lib.exe，双击lib.exe，若缺少运行环境，把对应的动态链接库拷贝到文件夹下即可。
+ 将需要合并的01.lib,02.lib,03.lib复制到上述工作目录中。
+ 之后打开CMD控制台cd进入lib.exe工作目录下,在命令行中输入`lib.exe /output: combine.lib 01.lib 02.lib 03.lib`,
+ 运行后如果库之间的某些函数是相同的（不是重载），lib,exe会报warning,这个不用担心，我再合并opencv的库时候刷了满屏。
+  </description>
+    </item>
+    
+  </channel>
+</rss>

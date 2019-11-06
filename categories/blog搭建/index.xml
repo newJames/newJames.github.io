@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog搭建 on James Blog</title>
+    <link>https://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</link>
+    <description>Recent content in blog搭建 on James Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Oct 2019 16:42:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git Clone下载主题失败及解决</title>
+      <link>https://newJames.github.io/post/first/</link>
+      <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
+      
+      <guid>https://newJames.github.io/post/first/</guid>
+      <description> Git Clone 下载主题出错及解决 问题 第一次使用Hugo实现静态网站生成，在下载主题时遇到如下问题:
+使用 git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git时报错
+错误显示
+error: RPC failed; curl 18 transfer closed with outstanding read data remaining
+fatal: The remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed 在网上大致搜寻了一下，一般是说项目太久，Tag资源文件太大所导致一般是如下两个解决方案。
+ 方法一
+扩容 git config --global http.postBuffer 524288000
+ 这个方法我没有成功，大家可以先试试，没有成功推荐方法二，还出错，我就没经历过
+ 方法二
+ 将连接方式由http改成ssh，即https://改为git://
+   以上问题都是在win10下遇到的。  </description>
+    </item>
+    
+  </channel>
+</rss>

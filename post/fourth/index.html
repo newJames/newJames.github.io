@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="James">
+  <meta name="description" content="Coding Every Day">
+  <meta name="keywords" content="C&#43;&#43;,Qt">
+  
+  <link rel="prev" href="https://newJames.github.io/post/third/" />
+  <link rel="next" href="https://newJames.github.io/post/fifth/" />
+  <link rel="canonical" href="https://newJames.github.io/post/fourth/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           QGC源码学习(1)-main函数学习 | James Blog
+       
+  </title>
+  <meta name="title" content="QGC源码学习(1)-main函数学习 | James Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/newJames.github.io\/"
+    },
+    "articleSection" : "post",
+    "name" : "QGC源码学习(1)-main函数学习",
+    "headline" : "QGC源码学习(1)-main函数学习",
+    "description" : "QGroundcontrol 源码学习（1）-万物之始main 作为非科班人员，第一次接触像QGroundcontrol这么庞大且杂乱的项目还是一头雾水，我在前期花了许多无效时间去摸索整个QGroundControl的架构和模型，\n并由此总结出比较简单的中大型项目的学习规律。在此记录下来。\nQGroundControl启动顺序 首选不不关注QGC的大体框架，即使通过文档先了解了也只是有了大致概念，真正深入理解和在此基础上进行二次开发还是需要细致到源码细节上。因此我还是先找到QGC的\nmain函数，从初始化窗口开始了解。我们是在win环境下编译，忽略掉mac、linux的define，main函数就做了一件事：\nQGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(app); app-\x26gt;_initCommon(); \/\/-- Initialize Cache System getQGCMapEngine()-\x26gt;init();  其中QGCMapEngine初始化地图引擎，在此不在展开，Q_CHECK_PTR宏是对指针是否合法的检测，在重要传参初始化指针的合法性检查中经常用到。\n顺着QGCApplication.cc源码看去初始化了什么：\n\/\/ Set up our logging filters QGCLoggingCategoryRegister::instance()-\x26gt;setFilterRulesFromSettings(loggingOptions); \/\/ gstreamer debug settings QString savePath, gstDebugLevel; if (settings.contains(AppSettings::savePathName)) { savePath = settings.value(\x26quot;SavePath\x26quot;).toString() \x2b \x26quot;\/Logs\/gst\x26quot;; \/\/ hardcode log path here, appsetting is not available yet if (!QDir(savePath).exists()) { QDir().mkdir(savePath); } } if (settings.contains(AppSettings::gstDebugName)) { gstDebugLevel = \x26quot;*:\x26quot; \x2b settings.",
+    "inLanguage" : "en-us",
+    "author" : "James",
+    "creator" : "James",
+    "publisher": "James",
+    "accountablePerson" : "James",
+    "copyrightHolder" : "James",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-06 14:08:39 \x2b0800 CST",
+    "dateModified" : "2019-11-06 14:08:39 \x2b0800 CST",
+    "url" : "https:\/\/newJames.github.io\/post\/fourth\/",
+    "wordCount" : "305",
+    "keywords" : [ "Qt","C\x2b\x2b", "James Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/post/" title="">Index</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About James">About James</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">QGC源码学习(1)-main函数学习</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://newJames.github.io/" rel="author">James</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-06 itemprop="datePublished">November 6, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="qgroundcontrol-源码学习-1-万物之始main">QGroundcontrol 源码学习（1）-万物之始main</h1>
+
+<p>作为非科班人员，第一次接触像QGroundcontrol这么庞大且杂乱的项目还是一头雾水，我在前期花了许多无效时间去摸索整个QGroundControl的架构和模型，</p>
+
+<p>并由此总结出比较简单的中大型项目的学习规律。在此记录下来。</p>
+
+<hr />
+
+<h2 id="qgroundcontrol启动顺序">QGroundControl启动顺序</h2>
+
+<p>首选不不关注QGC的大体框架，即使通过文档先了解了也只是有了大致概念，真正深入理解和在此基础上进行二次开发还是需要细致到源码细节上。因此我还是先找到QGC的</p>
+
+<p>main函数，从初始化窗口开始了解。我们是在win环境下编译，忽略掉mac、linux的<code>define</code>，main函数就做了一件事：</p>
+
+<pre><code class="language-python">QGCApplication* app = new QGCApplication(argc, argv, runUnitTests);
+Q_CHECK_PTR(app);
+app-&gt;_initCommon();
+//-- Initialize Cache System
+getQGCMapEngine()-&gt;init();
+</code></pre>
+
+<p>其中QGCMapEngine初始化地图引擎，在此不在展开，Q_CHECK_PTR宏是对指针是否合法的检测，在重要传参初始化指针的合法性检查中经常用到。</p>
+
+<p>顺着QGCApplication.cc源码看去初始化了什么：</p>
+
+<pre><code class="language-python">// Set up our logging filters
+    QGCLoggingCategoryRegister::instance()-&gt;setFilterRulesFromSettings(loggingOptions);
+ // gstreamer debug settings
+    QString savePath, gstDebugLevel;
+    if (settings.contains(AppSettings::savePathName)) {
+         savePath = settings.value(&quot;SavePath&quot;).toString() + &quot;/Logs/gst&quot;; // hardcode log path here, appsetting is not available yet
+         if (!QDir(savePath).exists()) {
+             QDir().mkdir(savePath);
+         }
+    }
+    if (settings.contains(AppSettings::gstDebugName)) {
+        gstDebugLevel = &quot;*:&quot; + settings.value(&quot;GstreamerDebugLevel&quot;).toString();
+    }
+
+    // Initialize Video Streaming
+    initializeVideoStreaming(argc, argv, savePath.toUtf8().data(), gstDebugLevel.toUtf8().data());
+
+    _toolbox = new QGCToolbox(this);
+    _toolbox-&gt;setChildToolboxes();
+</code></pre>
+
+<p>在QGCApplication实例化的时候初始化了依赖于gstreamer的视频流播放件和系统设置，并Qdebug()出了软件的版本号Git版本等软件信息。</p>
+
+<p>并在最后初始化了QGCToolbox，点开QGCToolbox.cc,就会发现这里包含了整个QGC的各个基本模块的初始化,在QGCToolbox实例化中同时将所有模块进行了初始化，</p>
+
+<p>并在<code>setChildboxes()</code>中与将toolbox传入方便各类之间交互传递信息：</p>
+
+<pre><code class="language-python">void QGCToolbox::setChildToolboxes(void)
+{
+    // SettingsManager must be first so settings are available to any subsequent tools
+    _settingsManager-&gt;setToolbox(this);
+
+    _corePlugin-&gt;setToolbox(this);
+    _audioOutput-&gt;setToolbox(this);
+    _factSystem-&gt;setToolbox(this);
+    _firmwarePluginManager-&gt;setToolbox(this);
+#ifndef __mobile__
+    _gpsManager-&gt;setToolbox(this);
+#endif
+    _imageProvider-&gt;setToolbox(this);
+    _joystickManager-&gt;setToolbox(this);
+    _linkManager-&gt;setToolbox(this);
+    _mavlinkProtocol-&gt;setToolbox(this);
+    _missionCommandTree-&gt;setToolbox(this);
+    _multiVehicleManager-&gt;setToolbox(this);
+    _mapEngineManager-&gt;setToolbox(this);
+    _uasMessageHandler-&gt;setToolbox(this);
+    _followMe-&gt;setToolbox(this);
+    _qgcPositionManager-&gt;setToolbox(this);
+    _videoManager-&gt;setToolbox(this);
+    _mavlinkLogManager-&gt;setToolbox(this);
+}
+</code></pre>
+
+<p>在后面会展开学习这些模块。</p>
+
+<p>接下来是<code>QGCApplication::_initCommon(void)</code>:</p>
+
+<pre><code class="language-python">QSettings settings;
+
+    // Register our Qml objects
+
+    qmlRegisterType&lt;QGCPalette&gt;     (&quot;QGroundControl.Palette&quot;, 1, 0, &quot;QGCPalette&quot;);
+    qmlRegisterType&lt;QGCMapPalette&gt;  (&quot;QGroundControl.Palette&quot;, 1, 0, &quot;QGCMapPalette&quot;);
+
+    qmlRegisterUncreatableType&lt;CoordinateVector&gt;    (&quot;QGroundControl&quot;,                  1, 0, &quot;CoordinateVector&quot;,       &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;QmlObjectListModel&gt;  (&quot;QGroundControl&quot;,                  1, 0, &quot;QmlObjectListModel&quot;,     &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;MissionCommandTree&gt;  (&quot;QGroundControl&quot;,                  1, 0, &quot;MissionCommandTree&quot;,     &quot;Reference only&quot;);
+
+    qmlRegisterUncreatableType&lt;AutoPilotPlugin&gt;     (&quot;QGroundControl.AutoPilotPlugin&quot;,      1, 0, &quot;AutoPilotPlugin&quot;,        &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;VehicleComponent&gt;    (&quot;QGroundControl.AutoPilotPlugin&quot;,      1, 0, &quot;VehicleComponent&quot;,       &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;Vehicle&gt;             (&quot;QGroundControl.Vehicle&quot;,              1, 0, &quot;Vehicle&quot;,                &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;MissionItem&gt;         (&quot;QGroundControl.Vehicle&quot;,              1, 0, &quot;MissionItem&quot;,            &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;MissionManager&gt;      (&quot;QGroundControl.Vehicle&quot;,              1, 0, &quot;MissionManager&quot;,         &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;ParameterManager&gt;    (&quot;QGroundControl.Vehicle&quot;,              1, 0, &quot;ParameterManager&quot;,       &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;JoystickManager&gt;     (&quot;QGroundControl.JoystickManager&quot;,      1, 0, &quot;JoystickManager&quot;,        &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;Joystick&gt;            (&quot;QGroundControl.JoystickManager&quot;,      1, 0, &quot;Joystick&quot;,               &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;QGCPositionManager&gt;  (&quot;QGroundControl.QGCPositionManager&quot;,   1, 0, &quot;QGCPositionManager&quot;,     &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;QGCMapPolygon&gt;       (&quot;QGroundControl.FlightMap&quot;,            1, 0, &quot;QGCMapPolygon&quot;,          &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;MissionController&gt;   (&quot;QGroundControl.Controllers&quot;,          1, 0, &quot;MissionController&quot;,      &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;GeoFenceController&gt;  (&quot;QGroundControl.Controllers&quot;,          1, 0, &quot;GeoFenceController&quot;,     &quot;Reference only&quot;);
+    qmlRegisterUncreatableType&lt;RallyPointController&gt;(&quot;QGroundControl.Controllers&quot;,          1, 0, &quot;RallyPointController&quot;,    &quot;Reference only&quot;);
+
+    qmlRegisterType&lt;ParameterEditorController&gt;      (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;ParameterEditorController&quot;);
+    qmlRegisterType&lt;ESP8266ComponentController&gt;     (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;ESP8266ComponentController&quot;);
+    qmlRegisterType&lt;ScreenToolsController&gt;          (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;ScreenToolsController&quot;);
+    qmlRegisterType&lt;PlanMasterController&gt;           (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;PlanElemementMasterController&quot;);
+    qmlRegisterType&lt;ValuesWidgetController&gt;         (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;ValuesWidgetController&quot;);
+    qmlRegisterType&lt;QGCFileDialogController&gt;        (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;QGCFileDialogController&quot;);
+    qmlRegisterType&lt;RCChannelMonitorController&gt;     (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;RCChannelMonitorController&quot;);
+    qmlRegisterType&lt;JoystickConfigController&gt;       (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;JoystickConfigController&quot;);
+    qmlRegisterType&lt;LogDownloadController&gt;          (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;LogDownloadController&quot;);
+    qmlRegisterType&lt;SyslinkComponentController&gt;     (&quot;QGroundControl.Controllers&quot;, 1, 0, &quot;SyslinkComponentController&quot;);
+</code></pre>
+
+<p>在initconmmon中将Qt中的模块通过<code>qmlRegisterUncreatableType</code>和<code>qmlRegisterType</code>注册进元对象系统，使前端qml能够访问使用Qt中的元素。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>James </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://newJames.github.io/post/fourth/>https://newJames.github.io/post/fourth/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/qt/">
+                    #Qt</a></span>
+            
+            <span class="tag"><a href="https://newJames.github.io/tags/c&#43;&#43;/">
+                    #C&#43;&#43;</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://newJames.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://newJames.github.io/post/third/" class="prev" rel="prev" title="Qt项目打包发布"><i class="iconfont icon-left"></i>&nbsp;Qt项目打包发布</a>
+         
+        
+        <a href="https://newJames.github.io/post/fifth/" class="next" rel="next" title="QGC源码学习(2)-ToolBox各模块学习">QGC源码学习(2)-ToolBox各模块学习&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://newJames.github.io/">James</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
