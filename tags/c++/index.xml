@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on James Blog</title>
-    <link>https://newJames.github.io/tags/c&#43;&#43;/</link>
+    <link>https://newjames.github.io/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Nov 2019 15:56:23 +0800</lastBuildDate>
     
-	<atom:link href="https://newJames.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://newjames.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Qt语言家使用</title>
-      <link>https://newJames.github.io/post/seventh/</link>
+      <link>https://newjames.github.io/post/seventh/</link>
       <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/seventh/</guid>
+      <guid>https://newjames.github.io/post/seventh/</guid>
       <description> Qt语言家使用 最近要将项目做汉化，于是使用Qt语言家插件，它能够自动识别Qt和qml文件中的tr(&amp;ldquo;&amp;rdquo;)字段并生成文件供调用。
 以下是基本操作步骤：
  在项目.pro文件中添加TRANSLATIONS + =zh_Cn.ts zh_En.ts 这里是指中英文两个语言版本，这里我的源项目是英文的，如果要将qml的tr一起添加进去则要添加以下信息：
@@ -26,10 +26,10 @@ mTranslator = new QTranslator(this); _loadTranslatorFile(); void QGCApplication:
     
     <item>
       <title>QGC源码学习（3）关键数据传输</title>
-      <link>https://newJames.github.io/post/sixth/</link>
+      <link>https://newjames.github.io/post/sixth/</link>
       <pubDate>Wed, 06 Nov 2019 15:56:14 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/sixth/</guid>
+      <guid>https://newjames.github.io/post/sixth/</guid>
       <description>QGC源码学习（3）关键数据传输 在无人系统上位机显示中，最为关键的数据为IMU上传的Roll,Pitch,Yaw和高度（深度）以及方位，在QGC中，由MAVLinkProtocol::messageReceived
 接收到Mavlink数据后，通过信号槽：
 Vehicle.cc connect(_mavlink, &amp;amp;MAVLinkProtocol::messageReceived, this, &amp;amp;Vehicle::_mavlinkMessageReceived); void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t message) { ... ... ... _uas-&amp;gt;receiveMessage(message); } UAS.cc void UAS::receiveMessage(mavlink_message_t message) { switch (message.compid) case MAV_...1: case MAV_...2: case MAV_...3: case MAVLINK_MSG_ID_ATTITUDE: { mavlink_attitude_t attitude; mavlink_msg_attitude_decode(&amp;amp;message, &amp;amp;attitude); quint64 time = getUnixReferenceTime(attitude.time_boot_ms); emit attitudeChanged(this, message.compid, QGC::limitAngleToPMPIf(attitude.roll), QGC::limitAngleToPMPIf(attitude.pitch), QGC::limitAngleToPMPIf(attitude.yaw), time); if (!wrongComponent) { lastAttitude = time; setRoll(QGC::limitAngleToPMPIf(attitude.roll)); setPitch(QGC::limitAngleToPMPIf(attitude.pitch)); setYaw(QGC::limitAngleToPMPIf(attitude.yaw)); attitudeKnown = true; emit attitudeChanged(this, getRoll(), getPitch(), getYaw(), time); } } break; .</description>
@@ -37,19 +37,20 @@ Vehicle.cc connect(_mavlink, &amp;amp;MAVLinkProtocol::messageReceived, this, &a
     
     <item>
       <title>QGC源码学习(2)-ToolBox各模块学习</title>
-      <link>https://newJames.github.io/post/fifth/</link>
+      <link>https://newjames.github.io/post/fifth/</link>
       <pubDate>Wed, 06 Nov 2019 15:08:39 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/fifth/</guid>
-      <description>QGC源码学习(2)-ToolBox各模块学习 QGC工具模块主要有以下组成： - settingsManager - corePlugin - audioOutput -声音管理 - factSystem -实例数据管理 - firmwarePluginManager -固件管理 - imageProvider - joystickManager -摇杆管理 - linkManager -数据连接管理 - mavlinkProtocol -mavlink协议 - misiionConmmandTree - multiVehicleManager -多机器管理 - mapEngineManager -地图引擎管理 - uasMessageHandler -日志信息管理 - followMe - qgcPositionManager -QGC位置管理 - videoManager -视频管理 - mavlinkLogManager -mvlink协议注册管理</description>
+      <guid>https://newjames.github.io/post/fifth/</guid>
+      <description> QGC源码学习(2)-ToolBox各模块学习 QGC工具模块主要有以下组成：
+ settingsManager corePlugin audioOutput -声音管理 factSystem -实例数据管理 firmwarePluginManager -固件管理 imageProvider joystickManager -摇杆管理 linkManager -数据连接管理 mavlinkProtocol -mavlink协议 misiionConmmandTree multiVehicleManager -多机器管理 mapEngineManager -地图引擎管理 uasMessageHandler -日志信息管理 followMe qgcPositionManager -QGC位置管理 videoManager -视频管理 mavlinkLogManager -mvlink协议注册管理  </description>
     </item>
     
     <item>
       <title>QGC源码学习(1)-main函数学习</title>
-      <link>https://newJames.github.io/post/fourth/</link>
+      <link>https://newjames.github.io/post/fourth/</link>
       <pubDate>Wed, 06 Nov 2019 14:08:39 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/fourth/</guid>
+      <guid>https://newjames.github.io/post/fourth/</guid>
       <description>QGroundcontrol 源码学习（1）-万物之始main 作为非科班人员，第一次接触像QGroundcontrol这么庞大且杂乱的项目还是一头雾水，我在前期花了许多无效时间去摸索整个QGroundControl的架构和模型，
 并由此总结出比较简单的中大型项目的学习规律。在此记录下来。
 QGroundControl启动顺序 首选不不关注QGC的大体框架，即使通过文档先了解了也只是有了大致概念，真正深入理解和在此基础上进行二次开发还是需要细致到源码细节上。因此我还是先找到QGC的
@@ -61,10 +62,10 @@ QGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(
     
     <item>
       <title>多个Lib静态库合并为一个的方法</title>
-      <link>https://newJames.github.io/post/second/</link>
+      <link>https://newjames.github.io/post/second/</link>
       <pubDate>Sat, 26 Oct 2019 13:30:01 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/second/</guid>
+      <guid>https://newjames.github.io/post/second/</guid>
       <description> #多个Lib静态库合并为一个的方法
 问题 当项目的依赖库较多时，我们在自我编译添加链接和项目发布时都十分的麻烦，想到之前Opencv的Lib库只有一个Opencv_world.lib，遂想到能否将多个Lib合并起来。网上还是有大量的回答的，现假装搬运复述一遍。
 假设现在有01.lib,02.lib,03.lib三个lib库，需要合并成combine.lib

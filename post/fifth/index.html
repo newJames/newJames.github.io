@@ -9,9 +9,9 @@
   <meta name="description" content="Coding Every Day">
   <meta name="keywords" content="C&#43;&#43;,Qt">
   
-  <link rel="prev" href="https://newJames.github.io/post/fourth/" />
-  <link rel="next" href="https://newJames.github.io/post/sixth/" />
-  <link rel="canonical" href="https://newJames.github.io/post/fifth/" />
+  <link rel="prev" href="https://newjames.github.io/post/fourth/" />
+  <link rel="next" href="https://newjames.github.io/post/sixth/" />
+  <link rel="canonical" href="https://newjames.github.io/post/fifth/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/newJames.github.io\/"
+         "@id": "https:\/\/newjames.github.io\/"
     },
     "articleSection" : "post",
     "name" : "QGC源码学习(2)-ToolBox各模块学习",
     "headline" : "QGC源码学习(2)-ToolBox各模块学习",
-    "description" : "QGC源码学习(2)-ToolBox各模块学习 QGC工具模块主要有以下组成： - settingsManager - corePlugin - audioOutput -声音管理 - factSystem -实例数据管理 - firmwarePluginManager -固件管理 - imageProvider - joystickManager -摇杆管理 - linkManager -数据连接管理 - mavlinkProtocol -mavlink协议 - misiionConmmandTree - multiVehicleManager -多机器管理 - mapEngineManager -地图引擎管理 - uasMessageHandler -日志信息管理 - followMe - qgcPositionManager -QGC位置管理 - videoManager -视频管理 - mavlinkLogManager -mvlink协议注册管理",
+    "description" : " QGC源码学习(2)-ToolBox各模块学习 QGC工具模块主要有以下组成：\n settingsManager corePlugin audioOutput -声音管理 factSystem -实例数据管理 firmwarePluginManager -固件管理 imageProvider joystickManager -摇杆管理 linkManager -数据连接管理 mavlinkProtocol -mavlink协议 misiionConmmandTree multiVehicleManager -多机器管理 mapEngineManager -地图引擎管理 uasMessageHandler -日志信息管理 followMe qgcPositionManager -QGC位置管理 videoManager -视频管理 mavlinkLogManager -mvlink协议注册管理  ",
     "inLanguage" : "en-us",
     "author" : "James",
     "creator" : "James",
@@ -56,8 +56,8 @@
     "copyrightYear" : "2019",
     "datePublished": "2019-11-06 15:08:39 \x2b0800 CST",
     "dateModified" : "2019-11-06 15:08:39 \x2b0800 CST",
-    "url" : "https:\/\/newJames.github.io\/post\/fifth\/",
-    "wordCount" : "48",
+    "url" : "https:\/\/newjames.github.io\/post\/fifth\/",
+    "wordCount" : "31",
     "keywords" : [ "Qt","C\x2b\x2b", "James Blog"]
 }
 </script>
@@ -72,7 +72,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newjames.github.io/">James Blog</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -93,7 +93,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newJames.github.io/">James Blog</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newjames.github.io/">James Blog</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -122,12 +122,16 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">QGC源码学习(2)-ToolBox各模块学习</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://newJames.github.io/" rel="author">James</a> with ♥ 
+                Written by <a itemprop="name" href="https://newjames.github.io/" rel="author">James</a> with ♥ 
                 <span class="post-time">
                 on <time datetime=2019-11-06 itemprop="datePublished">November 6, 2019</time>
                 </span>
                 in
-                
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://newjames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
+                        
+                </span>
         </div>
     </header>
     <div class="post-content">
@@ -152,24 +156,27 @@
 
 <hr />
 
-<p>QGC工具模块主要有以下组成：
-- <strong>settingsManager</strong>
-- <strong>corePlugin</strong>
-- <strong>audioOutput</strong> -声音管理
-- <strong>factSystem</strong>  -实例数据管理
-- <strong>firmwarePluginManager</strong> -固件管理
-- <strong>imageProvider</strong>
-- <strong>joystickManager</strong> -摇杆管理
-- <strong>linkManager</strong> -数据连接管理
-- <strong>mavlinkProtocol</strong> -mavlink协议
-- <strong>misiionConmmandTree</strong>
-- <strong>multiVehicleManager</strong> -多机器管理
-- <strong>mapEngineManager</strong> -地图引擎管理
-- <strong>uasMessageHandler</strong> -日志信息管理
-- <strong>followMe</strong>
-- <strong>qgcPositionManager</strong> -QGC位置管理
-- <strong>videoManager</strong> -视频管理
-- <strong>mavlinkLogManager</strong> -mvlink协议注册管理</p>
+<p>QGC工具模块主要有以下组成：</p>
+
+<ul>
+<li><strong>settingsManager</strong></li>
+<li><strong>corePlugin</strong></li>
+<li><strong>audioOutput</strong> -声音管理</li>
+<li><strong>factSystem</strong>  -实例数据管理</li>
+<li><strong>firmwarePluginManager</strong> -固件管理</li>
+<li><strong>imageProvider</strong></li>
+<li><strong>joystickManager</strong> -摇杆管理</li>
+<li><strong>linkManager</strong> -数据连接管理</li>
+<li><strong>mavlinkProtocol</strong> -mavlink协议</li>
+<li><strong>misiionConmmandTree</strong></li>
+<li><strong>multiVehicleManager</strong> -多机器管理</li>
+<li><strong>mapEngineManager</strong> -地图引擎管理</li>
+<li><strong>uasMessageHandler</strong> -日志信息管理</li>
+<li><strong>followMe</strong></li>
+<li><strong>qgcPositionManager</strong> -QGC位置管理</li>
+<li><strong>videoManager</strong> -视频管理</li>
+<li><strong>mavlinkLogManager</strong> -mvlink协议注册管理</li>
+</ul>
 
     </div>
 
@@ -184,7 +191,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://newJames.github.io/post/fifth/>https://newJames.github.io/post/fifth/</span>
+                    <a href=https://newjames.github.io/post/fifth/>https://newjames.github.io/post/fifth/</span>
             </p>
             
              
@@ -200,34 +207,50 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://newJames.github.io/tags/qt/">
+            <span class="tag"><a href="https://newjames.github.io/tags/qt/">
                     #Qt</a></span>
             
-            <span class="tag"><a href="https://newJames.github.io/tags/c&#43;&#43;/">
+            <span class="tag"><a href="https://newjames.github.io/tags/c&#43;&#43;/">
                     #C&#43;&#43;</a></span>
             
             </section>
         
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://newJames.github.io/">home</a></span>
+                <span><a href="https://newjames.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://newJames.github.io/post/fourth/" class="prev" rel="prev" title="QGC源码学习(1)-main函数学习"><i class="iconfont icon-left"></i>&nbsp;QGC源码学习(1)-main函数学习</a>
+        <a href="https://newjames.github.io/post/fourth/" class="prev" rel="prev" title="QGC源码学习(1)-main函数学习"><i class="iconfont icon-left"></i>&nbsp;QGC源码学习(1)-main函数学习</a>
          
         
-        <a href="https://newJames.github.io/post/sixth/" class="next" rel="next" title="QGC源码学习（3）关键数据传输">QGC源码学习（3）关键数据传输&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://newjames.github.io/post/sixth/" class="next" rel="next" title="QGC源码学习（3）关键数据传输">QGC源码学习（3）关键数据传输&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
-    <div class="post-comment">
-          
-                 
-          
-    </div>
+	<div class="post-comment">
+    
+    
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'ss65MYlXH7ESDbbvPF1hyHVQ-gzGzoHsz',
+        appKey: 'Uny29zuoCVQYavUkkPOFzGpn',
+        notify: 'true', 
+        verify: 'false', 
+        avatar:'retro', 
+        placeholder: '说点什么吧...',
+        visitor: 'true'
+    });
+  </script>
+</div>
 </article>
           </div>
 		   </main>
@@ -241,7 +264,7 @@
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://newJames.github.io/">James</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://newjames.github.io/">James</a> | </span> 
          
 
          

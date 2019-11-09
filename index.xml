@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>James Blog on James Blog</title>
-    <link>https://newJames.github.io/</link>
+    <link>https://newjames.github.io/</link>
     <description>Recent content in James Blog on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,10 +10,10 @@
     
     <item>
       <title>Qt语言家使用</title>
-      <link>https://newJames.github.io/post/seventh/</link>
+      <link>https://newjames.github.io/post/seventh/</link>
       <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/seventh/</guid>
+      <guid>https://newjames.github.io/post/seventh/</guid>
       <description>
 
 &lt;h1 id=&#34;qt语言家使用&#34;&gt;Qt语言家使用&lt;/h1&gt;
@@ -46,11 +46,11 @@ SOURCES+= \
 
 &lt;p&gt;这里是在lupdate_only中添加qml文件路径
 - 之后点击工具-&amp;gt;外部-&amp;gt;Qt语言家-&amp;gt;更新翻译
-&lt;img src=&#34;https://newJames.github.io/images/7-1.png&#34; alt=&#34;更新翻译&#34; /&gt;
+&lt;img src=&#34;https://newjames.github.io/images/7-1.png&#34; alt=&#34;更新翻译&#34; /&gt;
 之后在目录下便会生成两个.ts文件
 - 打开对应编译器目录下bin文件中linguist.exe Qt语言家
 - 用Qt语言家打开相应的.ts文件进行翻译
-&lt;img src=&#34;https://newJames.github.io/images/7-2.png&#34; alt=&#34;更新翻译&#34; /&gt;
+&lt;img src=&#34;https://newjames.github.io/images/7-2.png&#34; alt=&#34;更新翻译&#34; /&gt;
 - 翻译完成后点击Qtcreator工具-&amp;gt;外部-&amp;gt;Qt语言家-&amp;gt;发布翻译
 - 在文件中引用.ts文件，注意：引用和必须在窗口创建前初始化时实例化QTrasnlator并加载好.ts文件&lt;/p&gt;
 
@@ -71,10 +71,10 @@ this-&amp;gt;installTranslator(mTranslator);
     
     <item>
       <title>QGC源码学习（3）关键数据传输</title>
-      <link>https://newJames.github.io/post/sixth/</link>
+      <link>https://newjames.github.io/post/sixth/</link>
       <pubDate>Wed, 06 Nov 2019 15:56:14 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/sixth/</guid>
+      <guid>https://newjames.github.io/post/sixth/</guid>
       <description>
 
 &lt;h1 id=&#34;qgc源码学习-3-关键数据传输&#34;&gt;QGC源码学习（3）关键数据传输&lt;/h1&gt;
@@ -132,43 +132,46 @@ void UAS::receiveMessage(mavlink_message_t message)
     
     <item>
       <title>QGC源码学习(2)-ToolBox各模块学习</title>
-      <link>https://newJames.github.io/post/fifth/</link>
+      <link>https://newjames.github.io/post/fifth/</link>
       <pubDate>Wed, 06 Nov 2019 15:08:39 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/fifth/</guid>
+      <guid>https://newjames.github.io/post/fifth/</guid>
       <description>
 
 &lt;h1 id=&#34;qgc源码学习-2-toolbox各模块学习&#34;&gt;QGC源码学习(2)-ToolBox各模块学习&lt;/h1&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;QGC工具模块主要有以下组成：
-- &lt;strong&gt;settingsManager&lt;/strong&gt;
-- &lt;strong&gt;corePlugin&lt;/strong&gt;
-- &lt;strong&gt;audioOutput&lt;/strong&gt; -声音管理
-- &lt;strong&gt;factSystem&lt;/strong&gt;  -实例数据管理
-- &lt;strong&gt;firmwarePluginManager&lt;/strong&gt; -固件管理
-- &lt;strong&gt;imageProvider&lt;/strong&gt;
-- &lt;strong&gt;joystickManager&lt;/strong&gt; -摇杆管理
-- &lt;strong&gt;linkManager&lt;/strong&gt; -数据连接管理
-- &lt;strong&gt;mavlinkProtocol&lt;/strong&gt; -mavlink协议
-- &lt;strong&gt;misiionConmmandTree&lt;/strong&gt;
-- &lt;strong&gt;multiVehicleManager&lt;/strong&gt; -多机器管理
-- &lt;strong&gt;mapEngineManager&lt;/strong&gt; -地图引擎管理
-- &lt;strong&gt;uasMessageHandler&lt;/strong&gt; -日志信息管理
-- &lt;strong&gt;followMe&lt;/strong&gt;
-- &lt;strong&gt;qgcPositionManager&lt;/strong&gt; -QGC位置管理
-- &lt;strong&gt;videoManager&lt;/strong&gt; -视频管理
-- &lt;strong&gt;mavlinkLogManager&lt;/strong&gt; -mvlink协议注册管理&lt;/p&gt;
+&lt;p&gt;QGC工具模块主要有以下组成：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;settingsManager&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;corePlugin&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;audioOutput&lt;/strong&gt; -声音管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;factSystem&lt;/strong&gt;  -实例数据管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;firmwarePluginManager&lt;/strong&gt; -固件管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;imageProvider&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;joystickManager&lt;/strong&gt; -摇杆管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;linkManager&lt;/strong&gt; -数据连接管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mavlinkProtocol&lt;/strong&gt; -mavlink协议&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;misiionConmmandTree&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;multiVehicleManager&lt;/strong&gt; -多机器管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mapEngineManager&lt;/strong&gt; -地图引擎管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;uasMessageHandler&lt;/strong&gt; -日志信息管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;followMe&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;qgcPositionManager&lt;/strong&gt; -QGC位置管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;videoManager&lt;/strong&gt; -视频管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mavlinkLogManager&lt;/strong&gt; -mvlink协议注册管理&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>QGC源码学习(1)-main函数学习</title>
-      <link>https://newJames.github.io/post/fourth/</link>
+      <link>https://newjames.github.io/post/fourth/</link>
       <pubDate>Wed, 06 Nov 2019 14:08:39 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/fourth/</guid>
+      <guid>https://newjames.github.io/post/fourth/</guid>
       <description>
 
 &lt;h1 id=&#34;qgroundcontrol-源码学习-1-万物之始main&#34;&gt;QGroundcontrol 源码学习（1）-万物之始main&lt;/h1&gt;
@@ -297,10 +300,10 @@ getQGCMapEngine()-&amp;gt;init();
     
     <item>
       <title>Qt项目打包发布</title>
-      <link>https://newJames.github.io/post/third/</link>
+      <link>https://newjames.github.io/post/third/</link>
       <pubDate>Mon, 04 Nov 2019 17:00:05 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/third/</guid>
+      <guid>https://newjames.github.io/post/third/</guid>
       <description>
 
 &lt;h1 id=&#34;qt项目打包发布&#34;&gt;Qt项目打包发布&lt;/h1&gt;
@@ -322,10 +325,10 @@ getQGCMapEngine()-&amp;gt;init();
     
     <item>
       <title>多个Lib静态库合并为一个的方法</title>
-      <link>https://newJames.github.io/post/second/</link>
+      <link>https://newjames.github.io/post/second/</link>
       <pubDate>Sat, 26 Oct 2019 13:30:01 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/second/</guid>
+      <guid>https://newjames.github.io/post/second/</guid>
       <description>
 
 &lt;p&gt;#多个Lib静态库合并为一个的方法&lt;/p&gt;
@@ -352,10 +355,10 @@ getQGCMapEngine()-&amp;gt;init();
     
     <item>
       <title>Git Clone下载主题失败及解决</title>
-      <link>https://newJames.github.io/post/first/</link>
+      <link>https://newjames.github.io/post/first/</link>
       <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/first/</guid>
+      <guid>https://newjames.github.io/post/first/</guid>
       <description>
 
 &lt;h1 id=&#34;git-clone-下载主题出错及解决&#34;&gt;Git Clone 下载主题出错及解决&lt;/h1&gt;
@@ -397,15 +400,15 @@ getQGCMapEngine()-&amp;gt;init();
     
     <item>
       <title>About James</title>
-      <link>https://newJames.github.io/about/</link>
+      <link>https://newjames.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://newJames.github.io/about/</guid>
+      <guid>https://newjames.github.io/about/</guid>
       <description>&lt;p&gt;&lt;strong&gt;机械专业的小码农&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;主要从事方向：C++ Qt 机器视觉&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://newJames.github.io/images/Wechat.jpg&#34; alt=&#34;微信&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://newjames.github.io/images/Wechat.jpg&#34; alt=&#34;微信&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

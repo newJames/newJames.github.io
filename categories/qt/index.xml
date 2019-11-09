@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Qt on James Blog</title>
-    <link>https://newJames.github.io/categories/qt/</link>
+    <link>https://newjames.github.io/categories/qt/</link>
     <description>Recent content in Qt on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Nov 2019 15:56:23 +0800</lastBuildDate>
     
-	<atom:link href="https://newJames.github.io/categories/qt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://newjames.github.io/categories/qt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Qt语言家使用</title>
-      <link>https://newJames.github.io/post/seventh/</link>
+      <link>https://newjames.github.io/post/seventh/</link>
       <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/seventh/</guid>
+      <guid>https://newjames.github.io/post/seventh/</guid>
       <description> Qt语言家使用 最近要将项目做汉化，于是使用Qt语言家插件，它能够自动识别Qt和qml文件中的tr(&amp;ldquo;&amp;rdquo;)字段并生成文件供调用。
 以下是基本操作步骤：
  在项目.pro文件中添加TRANSLATIONS + =zh_Cn.ts zh_En.ts 这里是指中英文两个语言版本，这里我的源项目是英文的，如果要将qml的tr一起添加进去则要添加以下信息：
@@ -26,10 +26,10 @@ mTranslator = new QTranslator(this); _loadTranslatorFile(); void QGCApplication:
     
     <item>
       <title>Qt项目打包发布</title>
-      <link>https://newJames.github.io/post/third/</link>
+      <link>https://newjames.github.io/post/third/</link>
       <pubDate>Mon, 04 Nov 2019 17:00:05 +0800</pubDate>
       
-      <guid>https://newJames.github.io/post/third/</guid>
+      <guid>https://newjames.github.io/post/third/</guid>
       <description>Qt项目打包发布 Qt项目打包一般分为以下流程： - 添加qt依赖库 - 添加外部依赖库 通过Qt自带的工具进行Qt项目的发布还是比较简单的，以下发布流程操作与win10环境，linux系统下区别不大
 首先在Qt中构建编译Release项目，将编译生成好的release文件中的.exe文件单独复制到一单独文件夹中。
 使用Qt自带的Qt*-bit for Desktop(#)命令行,其中 * 为Qt版本号，#为编译时所对应的编译器，然后cd到.exe文件夹中，如果是Widget Application(不使用Qquick)项目，
