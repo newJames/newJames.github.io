@@ -6,10 +6,27 @@
     <description>Recent content in Qt on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2019 15:56:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Dec 2019 17:56:23 +0800</lastBuildDate>
     
 	<atom:link href="https://newjames.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Qt元对象系统（一）</title>
+      <link>https://newjames.github.io/post/tenth/</link>
+      <pubDate>Fri, 06 Dec 2019 17:56:23 +0800</pubDate>
+      
+      <guid>https://newjames.github.io/post/tenth/</guid>
+      <description>Qt 元对象系统(一) Qt信号槽是一个很强大的机制，随着一直用Qt深入就很好奇所有继承自QObject的对象是如何通过元对象系统联系，而关于元对象系统主要有一下问题： - 什么是Qt元对象系统，它包含了哪些内容，它在我们的程序中做了什么？ - moc工具是什么，Q_OBJECT宏是什么？ - 元对象系统如何工作在Qml、C++、Javvascrip的混合编程的？ - 信号与槽机制、Qt事件机制、MFC消息机制三者的区别是什么？ - 信号与槽在单线程与多线程中是如何工作的？ - 如何在信号与槽机制中，传递自定义类型参数？
+什么是Qt元对象系统 元对象系统为Qt提供了信号与槽机制、实施类型信息和动态属性系统。系统的基础是以下三点： - Object类。
+对象模型的核心，信号槽是基于对象模型的，体现在我们常用的QObject::connect()函数上。
+对象的组织形式是树形结构，通过QObject::setParent()、QObject::findChild()、QObject::findChilren()可以体现出来。
+每一个对象都是完全独立，并且可以查出该对象的继承关系。这些对象不同的名字是我们使用findChild（）函数的关键，也是我们在Qml、C++混合编程时的关键。这里QObject是QMetaobject帮助实现的，QMetaObject是设置这些属性规则，并建立对象们之间的关系的关键。
+每个对象在销毁时都会发出信号具备安装事件过滤器。让对象接受或不接受某些事件及处理。如mouseEvent（）、timeEvent（），在某些没有继承Object类中是不能使用这些函数的，如QGraphicsItem以及它派生出来的其他图元类。 - Q_OBJECT
+宏定义，程序员定义的类、信号、槽函数、注册的数据等通过宏定义成为元对象。
+ moc(Meta-Object-Compiler)  元对象编译器，将Qt中定义的一些非C++关键字（如signals、slots）转化为C++编译器可识别。
+moc在预编译之前进行操作，moc之后每一个包含Q_Object宏头文件，都会生成一个moc_XXX的CPP文件，这个中间文件通过qmake生成Makefiles。</description>
+    </item>
     
     <item>
       <title>Qt语言家使用</title>

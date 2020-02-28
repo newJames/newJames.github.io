@@ -6,15 +6,24 @@
     <description>Recent content in Categories on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2019 15:56:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jan 2020 13:30:01 +0800</lastBuildDate>
     
 	<atom:link href="https://newjames.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>计算机组成原理</title>
+      <link>https://newjames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Sun, 26 Jan 2020 13:30:01 +0800</pubDate>
+      
+      <guid>https://newjames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Qt</title>
       <link>https://newjames.github.io/categories/qt/</link>
-      <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
+      <pubDate>Fri, 06 Dec 2019 17:56:23 +0800</pubDate>
       
       <guid>https://newjames.github.io/categories/qt/</guid>
       <description></description>
@@ -44,6 +53,15 @@
       <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
       
       <guid>https://newjames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>https://newjames.github.io/categories/sql/</link>
+      <pubDate>Mon, 07 Oct 2019 17:00:05 +0800</pubDate>
+      
+      <guid>https://newjames.github.io/categories/sql/</guid>
       <description></description>
     </item>
     
