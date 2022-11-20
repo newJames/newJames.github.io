@@ -2,72 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Qt on James Blog</title>
-    <link>https://newjames.github.io/tags/qt/</link>
+    <link>http://newJames.github.io/tags/qt/</link>
     <description>Recent content in Qt on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Dec 2019 17:56:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 14:08:39 +0800</lastBuildDate>
     
-	<atom:link href="https://newjames.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://newJames.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Qt元对象系统（一）</title>
-      <link>https://newjames.github.io/post/tenth/</link>
-      <pubDate>Fri, 06 Dec 2019 17:56:23 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/post/tenth/</guid>
-      <description>Qt 元对象系统(一) Qt信号槽是一个很强大的机制，随着一直用Qt深入就很好奇所有继承自QObject的对象是如何通过元对象系统联系，而关于元对象系统主要有一下问题： - 什么是Qt元对象系统，它包含了哪些内容，它在我们的程序中做了什么？ - moc工具是什么，Q_OBJECT宏是什么？ - 元对象系统如何工作在Qml、C++、Javvascrip的混合编程的？ - 信号与槽机制、Qt事件机制、MFC消息机制三者的区别是什么？ - 信号与槽在单线程与多线程中是如何工作的？ - 如何在信号与槽机制中，传递自定义类型参数？
-什么是Qt元对象系统 元对象系统为Qt提供了信号与槽机制、实施类型信息和动态属性系统。系统的基础是以下三点： - Object类。
-对象模型的核心，信号槽是基于对象模型的，体现在我们常用的QObject::connect()函数上。
-对象的组织形式是树形结构，通过QObject::setParent()、QObject::findChild()、QObject::findChilren()可以体现出来。
-每一个对象都是完全独立，并且可以查出该对象的继承关系。这些对象不同的名字是我们使用findChild（）函数的关键，也是我们在Qml、C++混合编程时的关键。这里QObject是QMetaobject帮助实现的，QMetaObject是设置这些属性规则，并建立对象们之间的关系的关键。
-每个对象在销毁时都会发出信号具备安装事件过滤器。让对象接受或不接受某些事件及处理。如mouseEvent（）、timeEvent（），在某些没有继承Object类中是不能使用这些函数的，如QGraphicsItem以及它派生出来的其他图元类。 - Q_OBJECT
-宏定义，程序员定义的类、信号、槽函数、注册的数据等通过宏定义成为元对象。
- moc(Meta-Object-Compiler)  元对象编译器，将Qt中定义的一些非C++关键字（如signals、slots）转化为C++编译器可识别。
-moc在预编译之前进行操作，moc之后每一个包含Q_Object宏头文件，都会生成一个moc_XXX的CPP文件，这个中间文件通过qmake生成Makefiles。</description>
-    </item>
-    
-    <item>
-      <title>Qt语言家使用</title>
-      <link>https://newjames.github.io/post/seventh/</link>
-      <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/post/seventh/</guid>
-      <description> Qt语言家使用 最近要将项目做汉化，于是使用Qt语言家插件，它能够自动识别Qt和qml文件中的tr(&amp;ldquo;&amp;rdquo;)字段并生成文件供调用。
-以下是基本操作步骤：
- 在项目.pro文件中添加TRANSLATIONS + =zh_Cn.ts zh_En.ts 这里是指中英文两个语言版本，这里我的源项目是英文的，如果要将qml的tr一起添加进去则要添加以下信息：
-lupdate_only { SOURCES+= \ ./src/VehicleSetup/*.qml \ ./src/QmlControls/*.qml \ ./src/AnalyzeView/*.qml \ ./src/FlightDisplay/*.qml \ ./src/FlightMap/*.qml \ ./src/FlightMap/Widgets/*.qml \ ./src/AutoPilotPlugins/PX4/*.qml \ ./src/MissionEditor/*.qml \ ./src/ViewWidgets/*.qml \ ./src/ui/toolbar/*.qml \ ./src/ui/*.qml \ ./src/FactSystem/FactControls/*.qml }  这里是在lupdate_only中添加qml文件路径 - 之后点击工具-&amp;gt;外部-&amp;gt;Qt语言家-&amp;gt;更新翻译 之后在目录下便会生成两个.ts文件 - 打开对应编译器目录下bin文件中linguist.exe Qt语言家 - 用Qt语言家打开相应的.ts文件进行翻译 - 翻译完成后点击Qtcreator工具-&amp;gt;外部-&amp;gt;Qt语言家-&amp;gt;发布翻译 - 在文件中引用.ts文件，注意：引用和必须在窗口创建前初始化时实例化QTrasnlator并加载好.ts文件
-mTranslator = new QTranslator(this); _loadTranslatorFile(); void QGCApplication::_loadTranslatorFile() { bool isLoad=mTranslator-&amp;gt;load(QCoreApplication::applicationDirPath()+&amp;quot;/zh_Cn.qm&amp;quot;); qDebug()&amp;lt;&amp;lt;&amp;quot;setChinese&amp;quot;&amp;lt;&amp;lt;isLoad&amp;lt;&amp;lt;&amp;quot;\n&amp;quot;; this-&amp;gt;installTranslator(mTranslator); }   </description>
-    </item>
-    
-    <item>
-      <title>QGC源码学习（3）关键数据传输</title>
-      <link>https://newjames.github.io/post/sixth/</link>
-      <pubDate>Wed, 06 Nov 2019 15:56:14 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/post/sixth/</guid>
-      <description>QGC源码学习（3）关键数据传输 在无人系统上位机显示中，最为关键的数据为IMU上传的Roll,Pitch,Yaw和高度（深度）以及方位，在QGC中，由MAVLinkProtocol::messageReceived
-接收到Mavlink数据后，通过信号槽：
-Vehicle.cc connect(_mavlink, &amp;amp;MAVLinkProtocol::messageReceived, this, &amp;amp;Vehicle::_mavlinkMessageReceived); void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t message) { ... ... ... _uas-&amp;gt;receiveMessage(message); } UAS.cc void UAS::receiveMessage(mavlink_message_t message) { switch (message.compid) case MAV_...1: case MAV_...2: case MAV_...3: case MAVLINK_MSG_ID_ATTITUDE: { mavlink_attitude_t attitude; mavlink_msg_attitude_decode(&amp;amp;message, &amp;amp;attitude); quint64 time = getUnixReferenceTime(attitude.time_boot_ms); emit attitudeChanged(this, message.compid, QGC::limitAngleToPMPIf(attitude.roll), QGC::limitAngleToPMPIf(attitude.pitch), QGC::limitAngleToPMPIf(attitude.yaw), time); if (!wrongComponent) { lastAttitude = time; setRoll(QGC::limitAngleToPMPIf(attitude.roll)); setPitch(QGC::limitAngleToPMPIf(attitude.pitch)); setYaw(QGC::limitAngleToPMPIf(attitude.yaw)); attitudeKnown = true; emit attitudeChanged(this, getRoll(), getPitch(), getYaw(), time); } } break; .</description>
-    </item>
-    
-    <item>
-      <title>QGC源码学习(2)-ToolBox各模块学习</title>
-      <link>https://newjames.github.io/post/fifth/</link>
-      <pubDate>Wed, 06 Nov 2019 15:08:39 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/post/fifth/</guid>
-      <description> QGC源码学习(2)-ToolBox各模块学习 QGC工具模块主要有以下组成：
- settingsManager corePlugin audioOutput -声音管理 factSystem -实例数据管理 firmwarePluginManager -固件管理 imageProvider joystickManager -摇杆管理 linkManager -数据连接管理 mavlinkProtocol -mavlink协议 misiionConmmandTree multiVehicleManager -多机器管理 mapEngineManager -地图引擎管理 uasMessageHandler -日志信息管理 followMe qgcPositionManager -QGC位置管理 videoManager -视频管理 mavlinkLogManager -mvlink协议注册管理  </description>
-    </item>
     
     <item>
       <title>QGC源码学习(1)-main函数学习</title>
-      <link>https://newjames.github.io/post/fourth/</link>
+      <link>http://newJames.github.io/post/fourth/</link>
       <pubDate>Wed, 06 Nov 2019 14:08:39 +0800</pubDate>
       
-      <guid>https://newjames.github.io/post/fourth/</guid>
+      <guid>http://newJames.github.io/post/fourth/</guid>
       <description>QGroundcontrol 源码学习（1）-万物之始main 作为非科班人员，第一次接触像QGroundcontrol这么庞大且杂乱的项目还是一头雾水，我在前期花了许多无效时间去摸索整个QGroundControl的架构和模型，
 并由此总结出比较简单的中大型项目的学习规律。在此记录下来。
 QGroundControl启动顺序 首选不不关注QGC的大体框架，即使通过文档先了解了也只是有了大致概念，真正深入理解和在此基础上进行二次开发还是需要细致到源码细节上。因此我还是先找到QGC的
@@ -75,19 +24,6 @@ main函数，从初始化窗口开始了解。我们是在win环境下编译，�
 QGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(app); app-&amp;gt;_initCommon(); //-- Initialize Cache System getQGCMapEngine()-&amp;gt;init();  其中QGCMapEngine初始化地图引擎，在此不在展开，Q_CHECK_PTR宏是对指针是否合法的检测，在重要传参初始化指针的合法性检查中经常用到。
 顺着QGCApplication.cc源码看去初始化了什么：
 // Set up our logging filters QGCLoggingCategoryRegister::instance()-&amp;gt;setFilterRulesFromSettings(loggingOptions); // gstreamer debug settings QString savePath, gstDebugLevel; if (settings.contains(AppSettings::savePathName)) { savePath = settings.value(&amp;quot;SavePath&amp;quot;).toString() + &amp;quot;/Logs/gst&amp;quot;; // hardcode log path here, appsetting is not available yet if (!QDir(savePath).exists()) { QDir().mkdir(savePath); } } if (settings.contains(AppSettings::gstDebugName)) { gstDebugLevel = &amp;quot;*:&amp;quot; + settings.</description>
-    </item>
-    
-    <item>
-      <title>Qt项目打包发布</title>
-      <link>https://newjames.github.io/post/third/</link>
-      <pubDate>Mon, 04 Nov 2019 17:00:05 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/post/third/</guid>
-      <description>Qt项目打包发布 Qt项目打包一般分为以下流程： - 添加qt依赖库 - 添加外部依赖库 通过Qt自带的工具进行Qt项目的发布还是比较简单的，以下发布流程操作与win10环境，linux系统下区别不大
-首先在Qt中构建编译Release项目，将编译生成好的release文件中的.exe文件单独复制到一单独文件夹中。
-使用Qt自带的Qt*-bit for Desktop(#)命令行,其中 * 为Qt版本号，#为编译时所对应的编译器，然后cd到.exe文件夹中，如果是Widget Application(不使用Qquick)项目，
-执行windeployqt %.exe命令，%为项目名称，如果是Quick Application 执行 windeployqt %.exe --qmldir &amp;quot;qml路径&amp;quot;，qml路径为Qt安装路径\版本号\编译器\qml
-接下来命令行就会在目录下添加Qt对应的依赖lib文件，若项目有依赖外部其他第三方库，将第三方库的静态链接库添加至文件夹中即可。</description>
     </item>
     
   </channel>

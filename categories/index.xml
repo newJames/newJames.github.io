@@ -2,66 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on James Blog</title>
-    <link>https://newjames.github.io/categories/</link>
+    <link>http://newJames.github.io/categories/</link>
     <description>Recent content in Categories on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Jan 2020 13:30:01 +0800</lastBuildDate>
     
-	<atom:link href="https://newjames.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://newJames.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>计算机组成原理</title>
-      <link>https://newjames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+      <link>http://newJames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
       <pubDate>Sun, 26 Jan 2020 13:30:01 +0800</pubDate>
       
-      <guid>https://newjames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Qt</title>
-      <link>https://newjames.github.io/categories/qt/</link>
-      <pubDate>Fri, 06 Dec 2019 17:56:23 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/categories/qt/</guid>
+      <guid>http://newJames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>QGC源码学习</title>
-      <link>https://newjames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Wed, 06 Nov 2019 15:56:14 +0800</pubDate>
+      <link>http://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Wed, 06 Nov 2019 14:08:39 +0800</pubDate>
       
-      <guid>https://newjames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>http://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>编译</title>
-      <link>https://newjames.github.io/categories/%E7%BC%96%E8%AF%91/</link>
+      <link>http://newJames.github.io/categories/%E7%BC%96%E8%AF%91/</link>
       <pubDate>Sat, 26 Oct 2019 13:30:01 +0800</pubDate>
       
-      <guid>https://newjames.github.io/categories/%E7%BC%96%E8%AF%91/</guid>
+      <guid>http://newJames.github.io/categories/%E7%BC%96%E8%AF%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog搭建</title>
-      <link>https://newjames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</link>
+      <link>http://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
       
-      <guid>https://newjames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sql</title>
-      <link>https://newjames.github.io/categories/sql/</link>
-      <pubDate>Mon, 07 Oct 2019 17:00:05 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/categories/sql/</guid>
+      <guid>http://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/</guid>
       <description></description>
     </item>
     

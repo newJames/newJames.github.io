@@ -12,7 +12,7 @@
   
   
   
-  <link rel="canonical" href="https://newjames.github.io/" />
+  <link rel="canonical" href="http://newJames.github.io/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -34,8 +34,8 @@
 
 
   
-    <link href="https://newjames.github.io/index.xml" rel="alternate" type="application/rss+xml" title="James Blog" />
-    <link href="https://newjames.github.io/index.xml" rel="feed" type="application/rss+xml" title="James Blog" />
+    <link href="http://newJames.github.io/index.xml" rel="alternate" type="application/rss+xml" title="James Blog" />
+    <link href="http://newJames.github.io/index.xml" rel="feed" type="application/rss+xml" title="James Blog" />
   
   
 
@@ -43,7 +43,7 @@
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    "url": "https:\/\/newjames.github.io\/",
+    "url": "http:\/\/newJames.github.io\/",
     "name": "James Blog",
     "author": {
         "@type": "Person",
@@ -64,7 +64,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newjames.github.io">James Blog</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://newJames.github.io">James Blog</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -85,7 +85,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://newjames.github.io">James Blog</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://newJames.github.io">James Blog</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -123,7 +123,7 @@
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/ninth/">程序内存布局</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="http://newJames.github.io/post/ninth/">程序内存布局</a></h1>
 			</header>
 			<div class="post-content">
 				 
@@ -158,17 +158,17 @@
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://newjames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"> 计算机组成原理 </a>
+                        <a href="http://newJames.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"> 计算机组成原理 </a>
                         
                 </span>
         </div>
 				
 				<div class="post-tags">
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/%E5%86%85%E5%AD%98/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/%E5%86%85%E5%AD%98/">
                	 #内存</a></span>
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
                	 #计算机组成原理</a></span>
         		
 				</div>
@@ -179,174 +179,7 @@
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/tenth/">Qt元对象系统（一）</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			Qt 元对象系统(一) Qt信号槽是一个很强大的机制，随着一直用Qt深入就很好奇所有继承自QObject的对象是如何通过元对象系统联系，而关于元对象系统主要有一下问题： - 什么是Qt元对象系统，它包含了哪些内容，它在我们的程序中做了什么？ - moc工具是什么，Q_OBJECT宏是什么？ - 元对象系统如何工作在Qml、C++、Javvascrip的混合编程的？ - 信号与槽机制、Qt事件机制、MFC消息机制三者的区别是什么？ - 信号与槽在单线程与多线程中是如何工作的？ - 如何在信号与槽机制中，传递自定义类型参数？
-什么是Qt元对象系统 元对象系统为Qt提供了信号与槽机制、实施类型信息和动态属性系统。系统的基础是以下三点： - Object类。
-对象模型的核心，信号槽是基于对象模型的，体现在我们常用的QObject::connect()函数上。
-对象的组织形式是树形结构，通过QObject::setParent()、QObject::findChild()、QObject::findChilren()可以体现出来。
-每一个对象都是完全独立，并且可以查出该对象的继承关系。这些对象不同的名字是我们使用findChild（）函数的关键，也是我们在Qml、C++混合编程时的关键。这里QObject是QMetaobject帮助实现的，QMetaObject是设置这些属性规则，并建立对象们之间的关系的关键。
-每个对象在销毁时都会发出信号具备安装事件过滤器。让对象接受或不接受某些事件及处理。如mouseEvent（）、timeEvent（），在某些没有继承Object类中是不能使用这些函数的，如QGraphicsItem以及它派生出来的其他图元类。 - Q_OBJECT
-宏定义，程序员定义的类、信号、槽函数、注册的数据等通过宏定义成为元对象。
- moc(Meta-Object-Compiler)  元对象编译器，将Qt中定义的一些非C++关键字（如signals、slots）转化为C++编译器可识别。
-moc在预编译之前进行操作，moc之后每一个包含Q_Object宏头文件，都会生成一个moc_XXX的CPP文件，这个中间文件通过qmake生成Makefiles。
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-12-06 itemprop="datePublished">December 6, 2019</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://newjames.github.io/categories/qt/"> Qt </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/qt/">
-               	 #Qt</a></span>
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/%E5%85%83%E5%AF%B9%E8%B1%A1/">
-               	 #元对象</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/seventh/">Qt语言家使用</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			 Qt语言家使用 最近要将项目做汉化，于是使用Qt语言家插件，它能够自动识别Qt和qml文件中的tr(&ldquo;&rdquo;)字段并生成文件供调用。
-以下是基本操作步骤：
- 在项目.pro文件中添加TRANSLATIONS + =zh_Cn.ts zh_En.ts 这里是指中英文两个语言版本，这里我的源项目是英文的，如果要将qml的tr一起添加进去则要添加以下信息：
-lupdate_only { SOURCES+= \ ./src/VehicleSetup/*.qml \ ./src/QmlControls/*.qml \ ./src/AnalyzeView/*.qml \ ./src/FlightDisplay/*.qml \ ./src/FlightMap/*.qml \ ./src/FlightMap/Widgets/*.qml \ ./src/AutoPilotPlugins/PX4/*.qml \ ./src/MissionEditor/*.qml \ ./src/ViewWidgets/*.qml \ ./src/ui/toolbar/*.qml \ ./src/ui/*.qml \ ./src/FactSystem/FactControls/*.qml }  这里是在lupdate_only中添加qml文件路径 - 之后点击工具-&gt;外部-&gt;Qt语言家-&gt;更新翻译 之后在目录下便会生成两个.ts文件 - 打开对应编译器目录下bin文件中linguist.exe Qt语言家 - 用Qt语言家打开相应的.ts文件进行翻译 - 翻译完成后点击Qtcreator工具-&gt;外部-&gt;Qt语言家-&gt;发布翻译 - 在文件中引用.ts文件，注意：引用和必须在窗口创建前初始化时实例化QTrasnlator并加载好.ts文件
-mTranslator = new QTranslator(this); _loadTranslatorFile(); void QGCApplication::_loadTranslatorFile() { bool isLoad=mTranslator-&gt;load(QCoreApplication::applicationDirPath()+&quot;/zh_Cn.qm&quot;); qDebug()&lt;&lt;&quot;setChinese&quot;&lt;&lt;isLoad&lt;&lt;&quot;\n&quot;; this-&gt;installTranslator(mTranslator); }   
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-11-06 itemprop="datePublished">November 6, 2019</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://newjames.github.io/categories/qt/"> Qt </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/qt/">
-               	 #Qt</a></span>
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/c&#43;&#43;/">
-               	 #C&#43;&#43;</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/sixth/">QGC源码学习（3）关键数据传输</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			QGC源码学习（3）关键数据传输 在无人系统上位机显示中，最为关键的数据为IMU上传的Roll,Pitch,Yaw和高度（深度）以及方位，在QGC中，由MAVLinkProtocol::messageReceived
-接收到Mavlink数据后，通过信号槽：
-Vehicle.cc connect(_mavlink, &amp;MAVLinkProtocol::messageReceived, this, &amp;Vehicle::_mavlinkMessageReceived); void Vehicle::_mavlinkMessageReceived(LinkInterface* link, mavlink_message_t message) { ... ... ... _uas-&gt;receiveMessage(message); } UAS.cc void UAS::receiveMessage(mavlink_message_t message) { switch (message.compid) case MAV_...1: case MAV_...2: case MAV_...3: case MAVLINK_MSG_ID_ATTITUDE: { mavlink_attitude_t attitude; mavlink_msg_attitude_decode(&amp;message, &amp;attitude); quint64 time = getUnixReferenceTime(attitude.time_boot_ms); emit attitudeChanged(this, message.compid, QGC::limitAngleToPMPIf(attitude.roll), QGC::limitAngleToPMPIf(attitude.pitch), QGC::limitAngleToPMPIf(attitude.yaw), time); if (!wrongComponent) { lastAttitude = time; setRoll(QGC::limitAngleToPMPIf(attitude.roll)); setPitch(QGC::limitAngleToPMPIf(attitude.pitch)); setYaw(QGC::limitAngleToPMPIf(attitude.yaw)); attitudeKnown = true; emit attitudeChanged(this, getRoll(), getPitch(), getYaw(), time); } } break; .
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-11-06 itemprop="datePublished">November 6, 2019</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://newjames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/qt/">
-               	 #Qt</a></span>
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/c&#43;&#43;/">
-               	 #C&#43;&#43;</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/fifth/">QGC源码学习(2)-ToolBox各模块学习</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			 QGC源码学习(2)-ToolBox各模块学习 QGC工具模块主要有以下组成：
- settingsManager corePlugin audioOutput -声音管理 factSystem -实例数据管理 firmwarePluginManager -固件管理 imageProvider joystickManager -摇杆管理 linkManager -数据连接管理 mavlinkProtocol -mavlink协议 misiionConmmandTree multiVehicleManager -多机器管理 mapEngineManager -地图引擎管理 uasMessageHandler -日志信息管理 followMe qgcPositionManager -QGC位置管理 videoManager -视频管理 mavlinkLogManager -mvlink协议注册管理  
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-11-06 itemprop="datePublished">November 6, 2019</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://newjames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/qt/">
-               	 #Qt</a></span>
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/c&#43;&#43;/">
-               	 #C&#43;&#43;</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/fourth/">QGC源码学习(1)-main函数学习</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="http://newJames.github.io/post/fourth/">QGC源码学习(1)-main函数学习</a></h1>
 			</header>
 			<div class="post-content">
 				 
@@ -369,17 +202,17 @@ QGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://newjames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
+                        <a href="http://newJames.github.io/categories/qgc%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/"> QGC源码学习 </a>
                         
                 </span>
         </div>
 				
 				<div class="post-tags">
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/qt/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/qt/">
                	 #Qt</a></span>
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/c&#43;&#43;/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/c&#43;&#43;/">
                	 #C&#43;&#43;</a></span>
         		
 				</div>
@@ -390,49 +223,7 @@ QGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/third/">Qt项目打包发布</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			Qt项目打包发布 Qt项目打包一般分为以下流程： - 添加qt依赖库 - 添加外部依赖库 通过Qt自带的工具进行Qt项目的发布还是比较简单的，以下发布流程操作与win10环境，linux系统下区别不大
-首先在Qt中构建编译Release项目，将编译生成好的release文件中的.exe文件单独复制到一单独文件夹中。
-使用Qt自带的Qt*-bit for Desktop(#)命令行,其中 * 为Qt版本号，#为编译时所对应的编译器，然后cd到.exe文件夹中，如果是Widget Application(不使用Qquick)项目，
-执行windeployqt %.exe命令，%为项目名称，如果是Quick Application 执行 windeployqt %.exe --qmldir &quot;qml路径&quot;，qml路径为Qt安装路径\版本号\编译器\qml
-接下来命令行就会在目录下添加Qt对应的依赖lib文件，若项目有依赖外部其他第三方库，将第三方库的静态链接库添加至文件夹中即可。
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-11-04 itemprop="datePublished">November 4, 2019</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://newjames.github.io/categories/qt/"> Qt </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/qt/">
-               	 #Qt</a></span>
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/%E7%BC%96%E8%AF%91/">
-               	 #编译</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/second/">多个Lib静态库合并为一个的方法</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="http://newJames.github.io/post/second/">多个Lib静态库合并为一个的方法</a></h1>
 			</header>
 			<div class="post-content">
 				 
@@ -456,17 +247,17 @@ QGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://newjames.github.io/categories/%E7%BC%96%E8%AF%91/"> 编译 </a>
+                        <a href="http://newJames.github.io/categories/%E7%BC%96%E8%AF%91/"> 编译 </a>
                         
                 </span>
         </div>
 				
 				<div class="post-tags">
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/%E7%BC%96%E8%AF%91/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/%E7%BC%96%E8%AF%91/">
                	 #编译</a></span>
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/c&#43;&#43;/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/c&#43;&#43;/">
                	 #C&#43;&#43;</a></span>
         		
 				</div>
@@ -477,7 +268,7 @@ QGCApplication* app = new QGCApplication(argc, argv, runUnitTests); Q_CHECK_PTR(
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/first/">Git Clone下载主题失败及解决</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="http://newJames.github.io/post/first/">Git Clone下载主题失败及解决</a></h1>
 			</header>
 			<div class="post-content">
 				 
@@ -506,17 +297,17 @@ fatal: index-pack failed 在网上大致搜寻了一下，一般是说项目太�
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
-                        <a href="https://newjames.github.io/categories/blog%E6%90%AD%E5%BB%BA/"> blog搭建 </a>
+                        <a href="http://newJames.github.io/categories/blog%E6%90%AD%E5%BB%BA/"> blog搭建 </a>
                         
                 </span>
         </div>
 				
 				<div class="post-tags">
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/hugo/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/hugo/">
                	 #hugo</a></span>
         		
-        			<span class="tag"><a href="https://newjames.github.io/tags/blog%E6%90%AD%E5%BB%BA/">
+        			<span class="tag"><a href="http://newJames.github.io/tags/blog%E6%90%AD%E5%BB%BA/">
                	 #blog搭建</a></span>
         		
 				</div>
@@ -527,62 +318,7 @@ fatal: index-pack failed 在网上大致搜寻了一下，一般是说项目太�
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/post/eighth/">mySql快速学习</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-
-       			Sql学习笔记 快速入门sql基本结构和知识、语法 基本概念 DBA：数据库管理员
-DBMS: 数据库管理系统
-DB：数据库
-MySql：CS架构
-数据库数据模型： - 层次模型 - 网状模型 - 关系模型
-数据库设计遵循三范式 - 第一范式
-数据库表中字段是单一属性，具有原子性，不可再分，关系型数据库一定满足第一范式。 - 第二范式
-在第一范式基础上，数据库表列中不存在非主键依赖于其他非主键或主键的一部分时，即为第二范式。 - 第三范式
-在第二范式基础上，数据库表中不存在非主键通过间接关系依赖主键的情况。
-数据库安装和入门使用 详见https://www.cnblogs.com/laumians-notes/p/9069498.html#undefined
- 启动/关闭服务 net start/stop servername 登录服务器 使用初始化默认root用户
-mysql -h localhost -P 3306 -u root -p
- 查看版本 select version() mysql --version
- 显示数据库 show databases
- 选中某一表 use [yourtables]
- 显示表 show tables show tables from [yourtables]]
- 查看当前所在库 select database()
- 创建表 create table 表名{ l列名 列类型 列名 列类型 }
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2019-10-07 itemprop="datePublished">October 7, 2019</time>
-                </span>
-                in
-                <i class="iconfont icon-folder"></i>
-                <span class="post-category">
-                        <a href="https://newjames.github.io/categories/sql/"> Sql </a>
-                        
-                </span>
-        </div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/sql/">
-               	 #sql</a></span>
-        		
-        			<span class="tag"><a href="https://newjames.github.io/tags/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/">
-               	 #入门学习</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://newjames.github.io/about/">About James</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="http://newJames.github.io/about/">About James</a></h1>
 			</header>
 			<div class="post-content">
 				 
@@ -617,13 +353,13 @@ mysql -h localhost -P 3306 -u root -p
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2019 - 2020</span>
+        <span itemprop="copyrightYear">2019 - 2022</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://newjames.github.io">James</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://newJames.github.io">James</a> | </span> 
          
 
          

@@ -2,102 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on James Blog</title>
-    <link>https://newjames.github.io/tags/</link>
+    <link>http://newJames.github.io/tags/</link>
     <description>Recent content in Tags on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Jan 2020 13:30:01 +0800</lastBuildDate>
     
-	<atom:link href="https://newjames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://newJames.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>内存</title>
-      <link>https://newjames.github.io/tags/%E5%86%85%E5%AD%98/</link>
+      <link>http://newJames.github.io/tags/%E5%86%85%E5%AD%98/</link>
       <pubDate>Sun, 26 Jan 2020 13:30:01 +0800</pubDate>
       
-      <guid>https://newjames.github.io/tags/%E5%86%85%E5%AD%98/</guid>
+      <guid>http://newJames.github.io/tags/%E5%86%85%E5%AD%98/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计算机组成原理</title>
-      <link>https://newjames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+      <link>http://newJames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
       <pubDate>Sun, 26 Jan 2020 13:30:01 +0800</pubDate>
       
-      <guid>https://newjames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Qt</title>
-      <link>https://newjames.github.io/tags/qt/</link>
-      <pubDate>Fri, 06 Dec 2019 17:56:23 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/tags/qt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>元对象</title>
-      <link>https://newjames.github.io/tags/%E5%85%83%E5%AF%B9%E8%B1%A1/</link>
-      <pubDate>Fri, 06 Dec 2019 17:56:23 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/tags/%E5%85%83%E5%AF%B9%E8%B1%A1/</guid>
+      <guid>http://newJames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://newjames.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Wed, 06 Nov 2019 15:56:23 +0800</pubDate>
+      <link>http://newJames.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Wed, 06 Nov 2019 14:08:39 +0800</pubDate>
       
-      <guid>https://newjames.github.io/tags/c&#43;&#43;/</guid>
+      <guid>http://newJames.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt</title>
+      <link>http://newJames.github.io/tags/qt/</link>
+      <pubDate>Wed, 06 Nov 2019 14:08:39 +0800</pubDate>
+      
+      <guid>http://newJames.github.io/tags/qt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>编译</title>
-      <link>https://newjames.github.io/tags/%E7%BC%96%E8%AF%91/</link>
-      <pubDate>Mon, 04 Nov 2019 17:00:05 +0800</pubDate>
+      <link>http://newJames.github.io/tags/%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Sat, 26 Oct 2019 13:30:01 +0800</pubDate>
       
-      <guid>https://newjames.github.io/tags/%E7%BC%96%E8%AF%91/</guid>
+      <guid>http://newJames.github.io/tags/%E7%BC%96%E8%AF%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog搭建</title>
-      <link>https://newjames.github.io/tags/blog%E6%90%AD%E5%BB%BA/</link>
+      <link>http://newJames.github.io/tags/blog%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
       
-      <guid>https://newjames.github.io/tags/blog%E6%90%AD%E5%BB%BA/</guid>
+      <guid>http://newJames.github.io/tags/blog%E6%90%AD%E5%BB%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://newjames.github.io/tags/hugo/</link>
+      <link>http://newJames.github.io/tags/hugo/</link>
       <pubDate>Mon, 21 Oct 2019 16:42:19 +0800</pubDate>
       
-      <guid>https://newjames.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sql</title>
-      <link>https://newjames.github.io/tags/sql/</link>
-      <pubDate>Mon, 07 Oct 2019 17:00:05 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>入门学习</title>
-      <link>https://newjames.github.io/tags/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Mon, 07 Oct 2019 17:00:05 +0800</pubDate>
-      
-      <guid>https://newjames.github.io/tags/%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>http://newJames.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

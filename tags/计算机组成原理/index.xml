@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>计算机组成原理 on James Blog</title>
-    <link>https://newjames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
+    <link>http://newJames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/</link>
     <description>Recent content in 计算机组成原理 on James Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Jan 2020 13:30:01 +0800</lastBuildDate>
     
-	<atom:link href="https://newjames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://newJames.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>程序内存布局</title>
-      <link>https://newjames.github.io/post/ninth/</link>
+      <link>http://newJames.github.io/post/ninth/</link>
       <pubDate>Sun, 26 Jan 2020 13:30:01 +0800</pubDate>
       
-      <guid>https://newjames.github.io/post/ninth/</guid>
+      <guid>http://newJames.github.io/post/ninth/</guid>
       <description>学习：剖析程序的内存布局 原文地址：http://duartes.org/gustavo/blog/
 原文翻译：https://blog.csdn.net/drshenlei/article/details/4339110
 内存管理多少年都不会变，这篇09年的文章到今天又重新学习了一遍，之前在深度搜索C++对象模型中看到过，以下是正文。
